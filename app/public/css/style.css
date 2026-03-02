@@ -18,7 +18,7 @@
   }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family:  Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--cor-fundo-pagina);
     color: var(--cor-texto);
@@ -30,19 +30,62 @@
   header {
     background-color: var(--cor-cabecalho);
     color: white;
-    text-align: center;
-    padding: 1rem;  
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* logo + label to the left */
+    position: relative; /* for centering the h1 absolutely */
   }
 
-  header img{
-    height: 50px;
-  } 
-  
+  /* Logo + label grouped semantically */
+  header figure {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0; /* remove default figure margin */
+  }
 
-  .header label{
-    font-family: "Exo", sans-serif;
+  header figure img{
+    height: 50px;
+    display: block;
+  }
+
+  /* Apply the special font only to the label (figcaption) */
+  header figure figcaption {
+    font-family: "Exo", Arial, sans-serif;
     font-weight: 900;
     font-style: normal;
+    color: white;
+    letter-spacing: 0.04em;
+  }
+
+  /* Center the main title visually but keep semantic flow */
+  header h1 {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--cor-titulo-cabecalho);
+    font-size: 1.25rem;
+  }
+
+  /* Responsividade: evitar sobreposição em telas pequenas */
+  @media (max-width: 600px) {
+    header {
+      justify-content: center;
+    }
+
+    header figure {
+      position: absolute;
+      left: 0.75rem;
+    }
+
+    header h1 {
+      position: static;
+      transform: none;
+      text-align: center;
+      margin-top: 0.25rem;
+    }
   }
   
   nav ul {
@@ -94,7 +137,7 @@
     color: var(--cor-titulo-cabecalho);
   }
 
-  h1, h2 {
+  main h1, main h2 {
     color: var(--cor-titulo-corpo);
   }
   
