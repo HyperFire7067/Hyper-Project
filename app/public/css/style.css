@@ -2,8 +2,8 @@
   --cor-fundo-pagina: #f8f8f8; /* Cor de fundo suave (cinza claro) */
   --cor-cabecalho: #000; /* Azul padrão (cor primária do Bootstrap) */
   --cor-navegacao: #0f0f0f; /* Cinza suave para a navegação */
-  --cor-botoes: #700070; /* Verde de sucesso */
-  --cor-botoes-hover: #210021; /* Verde mais escuro para hover */
+  --cor-botoes: #700070; /* Roxo de sucesso */
+  --cor-botoes-hover: #210021; /* Roxo mais escuro para hover */
   --cor-titulo-cabecalho: #f5f5f5;
   --cor-titulo-corpo: #404040; /* Cor escura para os títulos */
   --cor-texto: #292929; /* Cor do texto principal */
@@ -52,7 +52,7 @@
 
   /* Apply the special font only to the label (figcaption) */
   header figure figcaption {
-    font-family: "Exo", Arial, sans-serif;
+    font-family: "exo-soft",Arial, sans-serif;
     font-weight: 900;
     font-style: normal;
     color: white;
@@ -66,12 +66,13 @@
     left: 50%;
     transform: translateX(-50%);
     color: var(--cor-titulo-cabecalho);
-    font-size: 1.25rem;
+    display: inline;
+     /* Ensure it doesn't take up full width */
   }
 
   /* Responsividade: evitar sobreposição em telas pequenas */
   @media (max-width: 600px) {
-    header {
+    header, nav{
       justify-content: center;
     }
 
